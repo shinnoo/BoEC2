@@ -1,0 +1,34 @@
+{
+  "name": "ProductOrder",
+  "fields": [
+    {
+      "fieldName": "quantity",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "orders",
+      "otherEntityRelationshipName": "productOrders",
+      "relationshipName": "order"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "productOrder",
+      "relationshipName": "product",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "product_order",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505042842"
+}

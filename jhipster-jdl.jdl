@@ -1,0 +1,65 @@
+
+entity Customer {
+	lastName String,
+    firstName String,
+    priorCustomer Boolean	
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Shipment {
+	address String,
+	street String,
+	city String,
+    zipCode String
+}
+
+entity Orders {
+	date Instant
+}
+
+entity State {
+	name String,
+    taxRate Float
+}
+
+/**
+ * The Employee entity.
+ */
+entity Payment {
+	description String
+}
+
+entity Product {
+	name String,
+	price Long,
+    cartId Integer
+}
+
+entity ProductOrder {
+	quantity Long
+}
+
+relationship ManyToOne {
+  Orders{Customer(lastName)} to Customer{orders},
+  Shipment{Customer(lastName)} to Customer{shipments}
+  ProductOrder{order} to Orders{productOrders},
+  ProductOrder{Product(name)} to Product
+}
+
+relationship OneToOne {
+	Orders{Payment(description)} to Payment,
+    Orders{State(name)} to State,
+    Orders{Shipment(address)} to Shipment
+}
+
+paginate Customer, Payment, State, Orders, ProductOrder, Product, Shipment with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

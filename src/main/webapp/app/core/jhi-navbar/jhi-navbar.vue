@@ -29,6 +29,34 @@
             <font-awesome-icon icon="th-list" />
             <span class="no-bold">Entities</span>
           </span>
+          <b-dropdown-item to="/customer">
+            <font-awesome-icon icon="asterisk" />
+            <span>Customer</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/shipment">
+            <font-awesome-icon icon="asterisk" />
+            <span>Shipment</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/orders">
+            <font-awesome-icon icon="asterisk" />
+            <span>Orders</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/state">
+            <font-awesome-icon icon="asterisk" />
+            <span>State</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/payment">
+            <font-awesome-icon icon="asterisk" />
+            <span>Payment</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/product">
+            <font-awesome-icon icon="asterisk" />
+            <span>Product</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/product-order">
+            <font-awesome-icon icon="asterisk" />
+            <span>Product Order</span>
+          </b-dropdown-item>
           <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
         </b-nav-item-dropdown>
         <b-nav-item-dropdown

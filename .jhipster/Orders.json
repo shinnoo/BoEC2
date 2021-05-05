@@ -1,0 +1,58 @@
+{
+  "name": "Orders",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "payment",
+      "otherEntityField": "description",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "state",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "state",
+      "otherEntityField": "name",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "shipment",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "shipment",
+      "otherEntityField": "address",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "customer",
+      "otherEntityField": "lastName"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "productOrder",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "productOrders"
+    }
+  ],
+  "entityTableName": "orders",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210505042838"
+}
